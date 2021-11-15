@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--CSS-->
+  <link rel="stylesheet" href="CSS/style.css">
+  <!--icon-->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Time tracking dashboard</title>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!--CARD-->
+    <div class="card-container">
+
+      <div class="card-top">
+        <div class="card-imagem"><img src="images/cap.jpeg" alt="Foto perfil"></div>
+        <div id="card-txt">Report for</div>
+        <div id="card-name">Carlos César</div>
+      </div>
+
+      <div class="card-bottom">
+        <div class="card-bottom-txt">
+          <p id="btn-daily" onclick="daily()">Daily</p>
+        </div>
+        <div class="card-bottom-txt">
+          <p id="btn-weekly" onclick="weekly()">Weekly</p>
+        </div>
+        <div class="card-bottom-txt">
+          <p id="btn-monthly" onclick="monthly()">Monthly</p>
+        </div>
+      </div>
+      
+    </div>
+
+    <!--WORK-->
+    <div id="work" class="hours-container">
+
+      <div class="hours-color" id="work-color">
+        <img src="images/icon-work.svg" alt="work">
+      </div>
+
+      <div class="hours-content">
+        <div class="hours-top">
+          <p>Work</p>
+          <div class="btn-content">
+            <div class="btn" id="work-btn1" onclick="workOne()"></div>
+            <div class="btn" id="work-btn2" onclick="workTwo()"></div>
+            <div class="btn" id="work-btn3" onclick="workTree()"></div>
+          </div>
+
+        </div>
+
+        <div class="hours-destaque-01" id="work-destaque-01" >
+          <h2>5hrs</h2>
+          <p>Yesterday Daily -7hrs</p>
+        </div>
+
+        <div class="hours-destaque-02" id="work-destaque-02" >
+          <h2>32hrs</h2>
+          <p>Last Week - 36hrs</p>
+        </div>
+
+        <div class="hours-destaque-03" id="work-destaque-03" >
+          <h2>103hrs</h2>
+          <p>Last Monthly - 128hrs</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!--PLAY-->
+    <div id="play" class="hours-container">
+
+      <div class="hours-color" id="play-color"><img src="images/icon-play.svg" alt="play"></div>
+
+      <div class="hours-content">
+        <div class="hours-top">
+          <p>Play</p>
+          <div class="btn-content">
+            <div class="btn" id="play-btn1" onclick="playOne()"></div>
+            <div class="btn" id="play-btn2" onclick="playTwo()"></div>
+            <div class="btn" id="play-btn3" onclick="playTree()"></div>
+          </div>
+        </div>
+
+        <div class="hours-destaque-01" id="play-destaque-01">
+          <h2>1hrs</h2>
+          <p>Yesterday Daily -2hrs</p>
+        </div>
+
+        <div class="hours-destaque-02"  id="play-destaque-02">
+          <h2>10hrs</h2>
+          <p>Last Week - 8hrs</p>
+        </div>
+
+        <div class="hours-destaque-03"  id="play-destaque-03">
+          <h2>23hrs</h2>
+          <p>Last Monthly - 29hrs</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!--STUDY-->
+    <div id="study" class="hours-container">
+
+    <div class="hours-color" id="study-color"><img src="images/icon-study.svg" alt="study"></div>
+
+    <div class="hours-content">
+      <div class="hours-top">
+        <p>Study</p>
+        <div class="btn-content">
+          <div class="btn" id="study-btn1" onclick="studyOne()"></div>
+          <div class="btn" id="study-btn2" onclick="studyTwo()"></div>
+          <div class="btn" id="study-btn3" onclick="studyTree()"></div>
+        </div>
+      </div>
+
+      <div class="hours-destaque-01" id="study-destaque-01">
+        <h2>0hrs</h2>
+        <p>Yesterday Daily -1hrs</p>
+      </div>
+
+      <div class="hours-destaque-02" id="study-destaque-02">
+        <h2>4hrs</h2>
+        <p>Last Week - 7hrs</p>
+      </div>
+
+      <div class="hours-destaque-03" id="study-destaque-03">
+        <h2>13hrs</h2>
+        <p>Last Monthly - 19hrs</p>
+      </div>
+
+    </div>
+
+    </div>
+
+    <!--EXERCISE-->
+    <div id="exercise" class="hours-container">
+
+    <div class="hours-color" id="exercise-color"><img src="images/icon-exercise.svg" alt="exercise"></div>
+
+    <div class="hours-content">
+      <div class="hours-top">
+        <p>Exercise</p>
+        <div class="btn-content">
+            <div class="btn" id="exercise-btn1" onclick="ExerciseOne()"></div>
+            <div class="btn" id="exercise-btn2" onclick="ExerciseTwo()"></div>
+            <div class="btn" id="exercise-btn3" onclick="ExerciseTree()"></div>
+        </div>
+      </div>
+
+      <div class="hours-destaque-01" id="exercise-destaque-01">
+        <h2>1hrs</h2>
+        <p>Yesterday Daily -1hrs</p>
+      </div>
+
+      <div class="hours-destaque-02" id="exercise-destaque-02">
+        <h2>4hrs</h2>
+        <p>Last Week - 5hrs</p>
+      </div>
+
+      <div class="hours-destaque-03" id="exercise-destaque-03">
+        <h2>11hrs</h2>
+        <p>Last Monthly - 18hrs</p>
+      </div>
+
+    </div>
+
+    </div>
+
+    <!--SOCIAL-->
+    <div id="social" class="hours-container">
+
+    <div class="hours-color" id="social-color"><img src="images/icon-social.svg" alt="social"></div>
+
+    <div class="hours-content">
+      <div class="hours-top">
+        <p>Social</p>
+        <div class="btn-content">
+            <div class="btn" id="social-btn1" onclick="socialOne()"></div>
+            <div class="btn" id="social-btn2" onclick="socialTwo()"></div>
+            <div class="btn" id="social-btn3" onclick="socialTree()"></div>
+        </div>
+      </div>
+
+      <div class="hours-destaque-01" id="social-destaque-01">
+        <h2>1hrs</h2>
+        <p>Yesterday Daily -3hrs</p>
+      </div>
+
+      <div class="hours-destaque-02" id="social-destaque-02">
+        <h2>5hrs</h2>
+        <p>Last Week - 10hrs</p>
+      </div>
+
+      <div class="hours-destaque-03" id="social-destaque-03">
+        <h2>21hrs</h2>
+        <p>Last Monthly - 23hrs</p>
+      </div>
+
+    </div>
+
+    </div>
+ 
+    <!--SELF-CARE-->
+    <div id="self-care" class="hours-container">
+
+      <div class="hours-color" id="self-care-color"><img src="images/icon-self-care.svg" alt="self-care"></div>
+  
+      <div class="hours-content">
+        <div class="hours-top">
+          <p>Self Care</p>
+          <div class="btn-content">
+            <div class="btn" id="self-btn1" onclick="selfOne()"></div>
+            <div class="btn" id="self-btn2" onclick="selfTwo()"></div>
+            <div class="btn" id="self-btn3" onclick="selfTree()"></div>
+          </div>
+        </div>
+  
+        <div class="hours-destaque-01" id="self-care-destaque-01">
+          <h2>0hrs</h2>
+          <p>Yesterday Daily -1hrs</p>
+        </div>
+  
+        <div class="hours-destaque-02"  id="self-care-destaque-02">
+          <h2>2hrs</h2>
+          <p>Last Week - 2hrs</p>
+        </div>
+  
+        <div class="hours-destaque-03"  id="self-care-destaque-03">
+          <h2>7hrs</h2>
+          <p>Last Monthly - 11hrs</p>
+        </div>
+  
+      </div>
+  
+    </div>
+
+  </div>
+
+  <!--SCRIPT-->
+  <script>   
+    var workUm = window.document.getElementById('work-destaque-01')
+    var workDo = window.document.getElementById('work-destaque-02')
+    var workTr = window.document.getElementById('work-destaque-03')
+
+    var workBtnUm = window.document.getElementById('work-btn1')
+    var workBtnDo = window.document.getElementById('work-btn2')
+    var workBtnTr = window.document.getElementById('work-btn3')
+
+
+    function workOne(){
+      workUm.style.display       = "flex"
+      workDo.style.display       = "none"
+      workTr.style.display       = "none"
+      workBtnUm.style.background = "var(--branco)"
+      workBtnDo.style.background = "var(--azul-btn)"
+      workBtnTr.style.background = "var(--azul-btn)"
+    }
+    function workTwo(){
+      workUm.style.display = "none"
+      workDo.style.display = "flex"
+      workTr.style.display = "none"
+      workBtnUm.style.background = "var(--azul-btn)"
+      workBtnDo.style.background = "var(--branco)"
+      workBtnTr.style.background = "var(--azul-btn)"
+    }
+    function workTree(){
+      workUm.style.display = "none"
+      workDo.style.display = "none"
+      workTr.style.display = "flex"
+      workBtnUm.style.background = "var(--azul-btn)"
+      workBtnDo.style.background = "var(--azul-btn)"
+      workBtnTr.style.background = "var(--branco)"
+    }
+
+    /*-----------------------------------------------*/
+
+    var playUm = window.document.getElementById('play-destaque-01')
+    var playDo = window.document.getElementById('play-destaque-02')
+    var playTr = window.document.getElementById('play-destaque-03')
+
+    var playBtnUm = window.document.getElementById('play-btn1')
+    var playBtnDo = window.document.getElementById('play-btn2')
+    var playBtnTr = window.document.getElementById('play-btn3')
+
+    function playOne(){
+      playUm.style.display = "flex"
+      playDo.style.display = "none"
+      playTr.style.display = "none"
+      playBtnUm.style.background = "var(--branco)"
+      playBtnDo.style.background = "var(--azul-btn)"
+      playBtnTr.style.background = "var(--azul-btn)"
+    }
+    function playTwo(){
+      playUm.style.display = "none"
+      playDo.style.display = "flex"
+      playTr.style.display = "none"
+      playBtnUm.style.background = "var(--azul-btn)"
+      playBtnDo.style.background = "var(--branco)"
+      playBtnTr.style.background = "var(--azul-btn)"
+    }
+    function playTree(){
+      playUm.style.display = "none"
+      playDo.style.display = "none"
+      playTr.style.display = "flex"
+      playBtnUm.style.background = "var(--azul-btn)"
+      playBtnDo.style.background = "var(--azul-btn)"
+      playBtnTr.style.background = "var(--branco)"
+    }
+
+    /*-----------------------------------------------*/
+
+    var studyUm = window.document.getElementById('study-destaque-01')
+    var studyDo = window.document.getElementById('study-destaque-02')
+    var studyTr = window.document.getElementById('study-destaque-03')
+
+    var studyBtnUm = window.document.getElementById('study-btn1')
+    var studyBtnDo = window.document.getElementById('study-btn2')
+    var studyBtnTr = window.document.getElementById('study-btn3')
+
+    function studyOne(){
+      studyUm.style.display = "flex"
+      studyDo.style.display = "none"
+      studyTr.style.display = "none"
+      studyBtnUm.style.background = "var(--branco)"
+      studyBtnDo.style.background = "var(--azul-btn)"
+      studyBtnTr.style.background = "var(--azul-btn)"
+    }
+    function studyTwo(){
+      studyUm.style.display = "none"
+      studyDo.style.display = "flex"
+      studyTr.style.display = "none"
+      studyBtnUm.style.background = "var(--azul-btn)"
+      studyBtnDo.style.background = "var(--branco)"
+      studyBtnTr.style.background = "var(--azul-btn)"
+    }
+    function studyTree(){
+      studyUm.style.display = "none"
+      studyDo.style.display = "none"
+      studyTr.style.display = "flex"
+      studyBtnUm.style.background = "var(--azul-btn)"
+      studyBtnDo.style.background = "var(--azul-btn)"
+      studyBtnTr.style.background = "var(--branco)"
+    }
+
+    /*-----------------------------------------------*/
+
+    var exerciseUm = window.document.getElementById('exercise-destaque-01')
+    var exerciseDo = window.document.getElementById('exercise-destaque-02')
+    var exerciseTr = window.document.getElementById('exercise-destaque-03')
+
+    var exerciseBtnUm = window.document.getElementById('exercise-btn1')
+    var exerciseBtnDo = window.document.getElementById('exercise-btn2')
+    var exerciseBtnTr = window.document.getElementById('exercise-btn3')
+
+    function ExerciseOne(){
+      exerciseUm.style.display = "flex"
+      exerciseDo.style.display = "none"
+      exerciseTr.style.display = "none"
+      exerciseBtnUm.style.background = "var(--branco)"
+      exerciseBtnDo.style.background = "var(--azul-btn)"
+      exerciseBtnTr.style.background = "var(--azul-btn)"
+    }
+    function ExerciseTwo(){
+      exerciseUm.style.display = "none"
+      exerciseDo.style.display = "flex"
+      exerciseTr.style.display = "none"
+      exerciseBtnUm.style.background = "var(--azul-btn)"
+      exerciseBtnDo.style.background = "var(--branco)"
+      exerciseBtnTr.style.background = "var(--azul-btn)"
+    }
+    function ExerciseTree(){
+      exerciseUm.style.display = "none"
+      exerciseDo.style.display = "none"
+      exerciseTr.style.display = "flex"
+      exerciseBtnUm.style.background = "var(--azul-btn)"
+      exerciseBtnDo.style.background = "var(--azul-btn)"
+      exerciseBtnTr.style.background = "var(--branco)"
+    }
+
+    /*-----------------------------------------------*/
+
+    var socialUm = window.document.getElementById('social-destaque-01')
+    var socialDo = window.document.getElementById('social-destaque-02')
+    var socialTr = window.document.getElementById('social-destaque-03')
+
+    var socialBtnUm = window.document.getElementById('social-btn1')
+    var socialBtnDo = window.document.getElementById('social-btn2')
+    var socialBtnTr = window.document.getElementById('social-btn3')
+
+    function socialOne(){
+      socialUm.style.display = "flex"
+      socialDo.style.display = "none"
+      socialTr.style.display = "none"
+      socialBtnUm.style.background = "var(--branco)"
+      socialBtnDo.style.background = "var(--azul-btn)"
+      socialBtnTr.style.background = "var(--azul-btn)"
+    }
+    function socialTwo(){
+      socialUm.style.display = "none"
+      socialDo.style.display = "flex"
+      socialTr.style.display = "none"
+      socialBtnUm.style.background = "var(--azul-btn)"
+      socialBtnDo.style.background = "var(--branco)"
+      socialBtnTr.style.background = "var(--azul-btn)"
+    }
+    function socialTree(){
+      socialUm.style.display = "none"
+      socialDo.style.display = "none"
+      socialTr.style.display = "flex"
+      socialBtnUm.style.background = "var(--azul-btn)"
+      socialBtnDo.style.background = "var(--azul-btn)"
+      socialBtnTr.style.background = "var(--branco)"
+    }
+
+    /*-----------------------------------------------*/
+
+    var selfUm = window.document.getElementById('self-care-destaque-01')
+    var selfDo = window.document.getElementById('self-care-destaque-02')
+    var selfTr = window.document.getElementById('self-care-destaque-03')
+
+    var selfBtnUm = window.document.getElementById('self-btn1')
+    var selfBtnDo = window.document.getElementById('self-btn2')
+    var selfBtnTr = window.document.getElementById('self-btn3')
+
+    function selfOne(){
+      selfUm.style.display = "flex"
+      selfDo.style.display = "none"
+      selfTr.style.display = "none"
+      selfBtnUm.style.background = "var(--branco)"
+      selfBtnDo.style.background = "var(--azul-btn)"
+      selfBtnTr.style.background = "var(--azul-btn)"
+    }
+    function selfTwo(){
+      selfUm.style.display = "none"
+      selfDo.style.display = "flex"
+      selfTr.style.display = "none"
+      selfBtnUm.style.background = "var(--azul-btn)"
+      selfBtnDo.style.background = "var(--branco)"
+      selfBtnTr.style.background = "var(--azul-btn)"
+    }
+    function selfTree(){
+      selfUm.style.display = "none"
+      selfDo.style.display = "none"
+      selfTr.style.display = "flex"
+      selfBtnUm.style.background = "var(--azul-btn)"
+      selfBtnDo.style.background = "var(--azul-btn)"
+      selfBtnTr.style.background = "var(--branco)"
+    }
+
+    /*-----------------------------------------------*/
+
+    var arrTd       =  [[workUm, workDo, workTr], [playUm, playDo, playTr], [studyUm,studyDo,studyTr], [exerciseUm, exerciseDo, exerciseTr], [socialUm, socialDo, socialTr], [selfUm, selfDo, selfTr]];
+    var arrBtn      =  [[workBtnUm, workBtnDo, workBtnTr], [playBtnUm, playBtnDo, playBtnTr], [studyBtnUm,studyBtnDo,studyBtnTr], [exerciseBtnUm, exerciseBtnDo, exerciseBtnTr], [socialBtnUm, socialBtnDo, socialBtnTr], [selfBtnUm, selfBtnDo, selfBtnTr]];
+    var btnDaily    =  window.document.getElementById("btn-daily")
+    var btnWeekly   =  window.document.getElementById("btn-weekly")
+    var btnMonthly  =  window.document.getElementById("btn-monthly")
+    
+    /*-----------------------------------------------*/
+
+    function daily(){
+      btnDaily.style.color   = "var(--branco)"
+      btnWeekly.style.color  = "var(--azul-btn)"
+      btnMonthly.style.color = "var(--azul-btn)"
+
+      arrTd[0][0].style.display = "flex"
+      arrTd[0][1].style.display = "none"
+      arrTd[0][2].style.display = "none"
+
+      arrTd[1][0].style.display = "flex"
+      arrTd[1][1].style.display = "none"
+      arrTd[1][2].style.display = "none"
+
+      arrTd[2][0].style.display = "flex"
+      arrTd[2][1].style.display = "none"
+      arrTd[2][2].style.display = "none"
+
+      arrTd[3][0].style.display = "flex"
+      arrTd[3][1].style.display = "none"
+      arrTd[3][2].style.display = "none"
+
+      arrTd[4][0].style.display = "flex"
+      arrTd[4][1].style.display = "none"
+      arrTd[4][2].style.display = "none"
+
+      arrTd[5][0].style.display = "flex"
+      arrTd[5][1].style.display = "none"
+      arrTd[5][2].style.display = "none"
+
+      arrBtn[0][0].style.background = "var(--branco)"
+      arrBtn[0][1].style.background = "var(--azul-btn)"
+      arrBtn[0][2].style.background = "var(--azul-btn)"
+
+      arrBtn[1][0].style.background = "var(--branco)"
+      arrBtn[1][1].style.background = "var(--azul-btn)"
+      arrBtn[1][2].style.background = "var(--azul-btn)"
+
+      arrBtn[2][0].style.background = "var(--branco)"
+      arrBtn[2][1].style.background = "var(--azul-btn)"
+      arrBtn[2][2].style.background = "var(--azul-btn)"
+
+      arrBtn[3][0].style.background = "var(--branco)"
+      arrBtn[3][1].style.background = "var(--azul-btn)"
+      arrBtn[3][2].style.background = "var(--azul-btn)"
+
+      arrBtn[4][0].style.background = "var(--branco)"
+      arrBtn[4][1].style.background = "var(--azul-btn)"
+      arrBtn[4][2].style.background = "var(--azul-btn)"
+
+      arrBtn[5][0].style.background = "var(--branco)"
+      arrBtn[5][1].style.background = "var(--azul-btn)"
+      arrBtn[5][2].style.background = "var(--azul-btn)"
+    }
+
+    /*-----------------------------------------------*/
+
+    function weekly(){
+      btnDaily.style.color   = "var(--azul-btn)"
+      btnWeekly.style.color  = "var(--branco)"
+      btnMonthly.style.color = "var(--azul-btn)"
+
+      arrTd[0][0].style.display = "none"
+      arrTd[0][1].style.display = "flex"
+      arrTd[0][2].style.display = "none"
+
+      arrTd[1][0].style.display = "none"
+      arrTd[1][1].style.display = "flex"
+      arrTd[1][2].style.display = "none"
+
+      arrTd[2][0].style.display = "none"
+      arrTd[2][1].style.display = "flex"
+      arrTd[2][2].style.display = "none"
+
+      arrTd[3][0].style.display = "none"
+      arrTd[3][1].style.display = "flex"
+      arrTd[3][2].style.display = "none"
+
+      arrTd[4][0].style.display = "none"
+      arrTd[4][1].style.display = "flex"
+      arrTd[4][2].style.display = "none"
+
+      arrTd[5][0].style.display = "none"
+      arrTd[5][1].style.display = "flex"
+      arrTd[5][2].style.display = "none"
+
+    
+      arrBtn[0][0].style.background = "var(--azul-btn)"
+      arrBtn[0][1].style.background = "var(--branco)"
+      arrBtn[0][2].style.background = "var(--azul-btn)"
+
+      arrBtn[1][0].style.background = "var(--azul-btn)"
+      arrBtn[1][1].style.background = "var(--branco)"
+      arrBtn[1][2].style.background = "var(--azul-btn)"
+
+      arrBtn[2][0].style.background = "var(--azul-btn)"
+      arrBtn[2][1].style.background = "var(--branco)"
+      arrBtn[2][2].style.background = "var(--azul-btn)"
+
+      arrBtn[3][0].style.background = "var(--azul-btn)"
+      arrBtn[3][1].style.background = "var(--branco)"
+      arrBtn[3][2].style.background = "var(--azul-btn)"
+
+      arrBtn[4][0].style.background = "var(--azul-btn)"
+      arrBtn[4][1].style.background = "var(--branco)"
+      arrBtn[4][2].style.background = "var(--azul-btn)"
+
+      arrBtn[5][0].style.background = "var(--azul-btn)"
+      arrBtn[5][1].style.background = "var(--branco)"
+      arrBtn[5][2].style.background = "var(--azul-btn)"
+    }
+
+    /*-----------------------------------------------*/
+
+    function monthly(){
+      btnDaily.style.color   = "var(--azul-btn)"
+      btnWeekly.style.color  = "var(--azul-btn)"
+      btnMonthly.style.color = "var(--branco)"
+      
+      arrTd[0][0].style.display = "none"
+      arrTd[0][1].style.display = "none"
+      arrTd[0][2].style.display = "flex"
+
+      arrTd[1][0].style.display = "none"
+      arrTd[1][1].style.display = "none"
+      arrTd[1][2].style.display = "flex"
+
+      arrTd[2][0].style.display = "none"
+      arrTd[2][1].style.display = "none"
+      arrTd[2][2].style.display = "flex"
+
+      arrTd[3][0].style.display = "none"
+      arrTd[3][1].style.display = "none"
+      arrTd[3][2].style.display = "flex"
+
+      arrTd[4][0].style.display = "none"
+      arrTd[4][1].style.display = "none"
+      arrTd[4][2].style.display = "flex"
+
+      arrTd[5][0].style.display = "none"
+      arrTd[5][1].style.display = "none"
+      arrTd[5][2].style.display = "flex"
+    
+      arrBtn[0][0].style.background = "var(--azul-btn)"
+      arrBtn[0][1].style.background = "var(--azul-btn)"
+      arrBtn[0][2].style.background = "var(--branco)"
+
+      arrBtn[1][0].style.background = "var(--azul-btn)"
+      arrBtn[1][1].style.background = "var(--azul-btn)"
+      arrBtn[1][2].style.background = "var(--branco)"
+
+      arrBtn[2][0].style.background = "var(--azul-btn)"
+      arrBtn[2][1].style.background = "var(--azul-btn)"
+      arrBtn[2][2].style.background = "var(--branco)"
+
+      arrBtn[3][0].style.background = "var(--azul-btn)"
+      arrBtn[3][1].style.background = "var(--azul-btn)"
+      arrBtn[3][2].style.background = "var(--branco)"
+
+      arrBtn[4][0].style.background = "var(--azul-btn)"
+      arrBtn[4][1].style.background = "var(--azul-btn)"
+      arrBtn[4][2].style.background = "var(--branco)"
+
+      arrBtn[5][0].style.background = "var(--azul-btn)"
+      arrBtn[5][1].style.background = "var(--azul-btn)"
+      arrBtn[5][2].style.background = "var(--branco)"
+    }
+  </script>
+</body>
+</html>
